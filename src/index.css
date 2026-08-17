@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-gold: #C9A227;
+    --color-gold-foil: #D4AF37;
+    --color-maroon: #7A1F2B;
+    --color-ivory: #FDFBF7;
+    --color-cream: #FBF4E8;
+    --color-peacock: #0B6E4F;
+    --color-dark: #2A1A12;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #FDFBF7;
+    color: #2A1A12;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif-royal {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-display-royal {
+    font-family: 'Cinzel Decorative', 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Animations */
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+/* Kolam SVG & Gold Foil Utilities */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 40%, #AA771C 80%, #E8C858 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-foil-border {
+  border-image: linear-gradient(135deg, #F3E5AB, #D4AF37, #AA771C, #F3E5AB) 1;
+}
+
+.gold-glow-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.45);
+  transform: translateY(-2px);
+}
+
+.maroon-card {
+  background: radial-gradient(circle at top right, #9B2242 0%, #7A1F2B 50%, #501019 100%);
+}
+
+.cream-card {
+  background: linear-gradient(180deg, rgba(253, 251, 247, 0.95) 0%, rgba(251, 244, 232, 0.98) 100%);
+  border: 1px solid rgba(201, 162, 39, 0.22);
+}
+
+/* Subtle Kolam Background Pattern */
+.bg-kolam-subtle {
+  background-image: radial-gradient(rgba(201, 162, 39, 0.15) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF4E8;
+}
+::-webkit-scrollbar-thumb {
+  background: #C9A227;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7A1F2B;
+}
